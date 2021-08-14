@@ -1,5 +1,5 @@
 package Discord.Bot;
-//Müzik botu için lavaplayer
+//MÃ¼zik botu iÃ§in lavaplayer
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -45,7 +45,7 @@ public class BotFirst extends ListenerAdapter {
 	public static String discordToken = "Discord Token here";
 	public static String twitchToken 	= "Twitch Token here";
 	public static String twitchTokenSecret = "Twitch Secret Token Here";
-	public static String youtubeToken = "YouTube Tokten Here";
+	public static String youtubeToken = "YouTube Token Here";
 
 	public static void main(String[] args) throws GeneralSecurityException, IOException {
 		System.out.println("Bot started");
@@ -57,7 +57,7 @@ public class BotFirst extends ListenerAdapter {
 		@SuppressWarnings("unused")
 		JDA jda = JDABuilder.createDefault(discordToken)
 			.addEventListeners(new BotFirst())
-			.setActivity(Activity.playing("with Discord API"))
+			.setActivity(Activity.playing("with Discord API")) // Bot's Activity Status
 			.setAutoReconnect(true)
 			.build();
 		System.out.println("Discord Bot started");
@@ -151,7 +151,7 @@ public class BotFirst extends ListenerAdapter {
 		MessageChannel mc = event.getChannel();
 		if(announcementChannel==null)
 			announcementChannel = g.getTextChannelById("805421299294797825");
-		mc.sendMessage("Komut odasi " + g.getTextChannelById("805421299294797825").getAsMention() + " olarak seçildi").queue();
+		mc.sendMessage("Komut odasi " + g.getTextChannelById("805421299294797825").getAsMention() + " olarak seÃ§ildi").queue();
 		
 		String[] msgRaw = m.getContentDisplay().split(" ");
 		//--------------------------------------------------
